@@ -1299,7 +1299,7 @@ static int snd_seq_ioctl_create_port(struct snd_seq_client *client,
 	snd_seq_set_port_info(port, &info);
 	snd_seq_system_client_ev_port_start(port->addr.client, port->addr.port);
 	snd_seq_port_unlock(port);
-	
+
 	if (copy_to_user(arg, &info, sizeof(info)))
 		return -EFAULT;
 
